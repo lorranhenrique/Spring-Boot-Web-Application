@@ -1,6 +1,8 @@
 <div th:replace = "compartilhado/header"></div>
 
-                    <!-- Page Heading -->
+            
+            <div class = "container-fluid">    
+<!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Administradores</h1>
                     <p class="mb-4">Aqui constam os manos adm
                         For more information about DataTables, please visit the <a target="_blank"
@@ -9,7 +11,8 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Lista de Adms</h6>
+                            <a href = "/administradores/novo" class = "btn btn-primary" style = "margin-right: 20px">Novo</a>
+                            <h6 class="m-0 font-weight-bold text-primary">Listagem de Administradores</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -41,7 +44,7 @@
                                             <td th:text="${administrador.email}"></td>
                                             <td th:text="${administrador.senha}"></td>
                                             <td> <a href = "#" class = "btn btn-warning"> Alterar </td>
-                                            <td> <a href = "#" class = "btn btn-danger">Excluir</td>
+                                            <td> <a href = "#" class = "btn btn-danger" th:onclick="'if(confirm(\'confirma?\')){window.location.href = \'' + @{/administradores/{id}(id=${administrador.id})} + '/excluir\'}'">Excluir</td>
                                         </tr>
                                     </tbody>
                                 </table>
