@@ -1,0 +1,33 @@
+<div th:replace = "compartilhado/header"></div>
+            <div class = "container-fluid">
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Editar Adm</h1>
+                    <p class="mb-4"> Edição de administrador<a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
+
+                    <!-- DataTales Example -->
+                    <form method="POST" th:action="@{'/administradores/' + ${administrador.id} + '/atualizar'}">
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input type="text" class="form-control" th:value="${administrador?.nome}" id="nome" name="nome" placeholder="Digite o seu nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" th:value="${administrador?.email}" id="email" name="email" placeholder="Digite o seu email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="senha">Senha</label>
+                            <input type="password" class="form-control" th:value="${administrador?.senha}" id="senha" name="senha" placeholder="Digite a sua senha" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="observacao">Observação</label>
+                            <textarea class="form-control" th:inline="text" id="observacao" name="observacao" placeholder="Digite a sua observação">[[${administrador?.observacao}]]</textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+<div th:replace = "compartilhado/footer"></div>
